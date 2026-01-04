@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+Sociovia/.venv/
+
+# Runtime
+flask_session/
+
+# Env
+.env

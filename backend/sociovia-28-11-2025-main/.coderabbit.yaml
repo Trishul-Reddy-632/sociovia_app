@@ -1,0 +1,60 @@
+# CodeRabbit Configuration for Sociovia Backend
+# https://docs.coderabbit.ai/configuration
+
+language: en-US
+
+reviews:
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  
+  path_instructions:
+    - path: "Sociovia/**/*.py"
+      instructions: |
+        Review Python code for:
+        - Security vulnerabilities (SQL injection, XSS, CSRF)
+        - Proper error handling with try/except
+        - Flask best practices
+        - PEP 8 compliance
+        - Type hints usage
+    
+    - path: "Sociovia/**/*routes*.py"
+      instructions: |
+        API Security Review:
+        - Authentication and authorization checks
+        - Input validation and sanitization
+        - Proper HTTP status codes
+        - Rate limiting considerations
+        - CORS configuration
+        - Request/response validation
+    
+    - path: "Sociovia/**/*models*.py"
+      instructions: |
+        Database Model Review:
+        - Proper constraints (NOT NULL, UNIQUE, etc.)
+        - Indexing recommendations for query performance
+        - Data integrity and relationships
+        - Sensitive data handling
+    
+    - path: "Sociovia/**/whatsapp/**"
+      instructions: |
+        WhatsApp Integration Review:
+        - Secure token handling
+        - Webhook validation
+        - Message template compliance
+        - Error retry logic
+    
+    - path: "templates/**"
+      instructions: |
+        Template Security Review:
+        - XSS prevention (proper escaping)
+        - No sensitive data exposure
+        - CSRF token usage
+  
+  auto_review:
+    enabled: true
+    drafts: false
+
+chat:
+  auto_reply: true

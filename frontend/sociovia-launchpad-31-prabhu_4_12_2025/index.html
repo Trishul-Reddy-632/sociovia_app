@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sociovia Technologies - AI-Powered Ad Automation Platform</title>
+    <meta name="description"
+        content="Sociovia Technologies - Revolutionizing ad automation and CRM for small businesses with AI. Launching Soon in 2025. Get early access now!" />
+    <meta name="author" content="Adtomate Solutions Private Limited" />
+    <meta name="keywords"
+        content="AI ad automation, CRM platform, smart funnel builder, lead generation, Meta ads, Facebook advertising, small business marketing" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="src\assets\sociovia_logo.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sociovia Technologies - AI-Powered Ad Automation Platform" />
+    <meta property="og:description"
+        content="Revolutionizing ad automation and CRM for small businesses with AI. Launching Soon in 2025." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="logo.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="logo.png" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+</head>
+
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1782321995750055', // replace with your Facebook App ID
+            cookie: true,
+            xfbml: true,
+            version: 'v23.0' // replace with the API version you want
+        });
+
+        FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

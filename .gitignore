@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Firebase
+.firebase/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large files (exceed GitHub 100MB limit)
+*.db
+*.sqlite
+*.sqlite3
+instance/
+playwright/
+ms-playwright/
+
+# Lock files (optional - can be large)
+bun.lockb
+package-lock.json
+
+# Google Cloud credentials
+*-k8-*.json
+*.json.enc

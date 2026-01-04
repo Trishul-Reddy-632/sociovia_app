@@ -1,0 +1,272 @@
+EAAZAVAy1umqcBQCgLY10ZBswvWenAsAZBc4NeRTPZAVEosf9SngvZBHEWLShOBr11U3Lo8DqjLuYZC9hJxph5ldc68eRUJlQHfyR7byqZCZCS8wCqhwZBehOcLJ060JaZCv0FuE8zbjTIhr3XVFnX5Hvf2pgykaZB8ygoxDGrocqGJDlrGADqLrQZCxEAwipieriEQZDZD
+
+
+import os
+import requests
+from urllib.parse import urlencode
+from datetime import datetime, timezone
+
+from flask import request, redirect, jsonify, current_app
+from itsdangerous import URLSafeSerializer, BadSignature
+
+from models import db, AdAccount
+
+# ============================================================
+# CONFIG
+# ============================================================
+
+FB_API_VERSION = "v19.0"
+GRAPH = f"https://graph.facebook.com/{FB_API_VERSION}"
+
+FB_APP_ID = os.getenv("FB_APP_ID")
+FB_APP_SECRET = os.getenv("FB_APP_SECRET")
+
+META_REDIRECT_URI = os.getenv(
+    "META_REDIRECT_URI",
+    "https://sociovia-backend-362038465411.europe-west1.run.app/api/meta/callback"
+)
+
+LOGIN_FOR_BUSINESS_CONFIG_ID = "1957333988179911"
+
+SYSTEM_USER_TOKEN = "EAAZAVAy1umqcBQCgLY10ZBswvWenAsAZBc4NeRTPZAVEosf9SngvZBHEWLShOBr11U3Lo8DqjLuYZC9hJxph5ldc68eRUJlQHfyR7byqZCZCS8wCqhwZBehOcLJ060JaZCv0FuE8zbjTIhr3XVFnX5Hvf2pgykaZB8ygoxDGrocqGJDlrGADqLrQZCxEAwipieriEQZDZD"  # used AFTER connection
+
+STATE_SECRET = os.getenv("STATE_SIGNER_SECRET", "dev-secret")
+STATE_SALT = "sociovia-meta-business-v1"
+serializer = URLSafeSerializer(STATE_SECRET, salt=STATE_SALT)
+
+# ============================================================
+# LOGGING
+# ============================================================
+
+def meta_log(title, data=None):
+    current_app.logger.info("[META] %s | %s", title, data or "")
+
+def meta_log_error(title, err):
+    current_app.logger.error("[META ERROR] %s | %s", title, err)
+
+@app.route("/api/meta/connect", methods=["GET"])
+def meta_connect():
+    state_payload = {
+        "workspace_id": request.args.get("workspace_id"),
+        "user_id": request.args.get("user_id"),
+        "ts": datetime.now(timezone.utc).isoformat(),
+    }
+
+    state = serializer.dumps(state_payload)
+
+    params = {
+        "client_id": FB_APP_ID,
+        "redirect_uri": META_REDIRECT_URI,
+        "response_type": "code",
+        "state": state,
+        "config_id": LOGIN_FOR_BUSINESS_CONFIG_ID,
+    }
+
+    url = f"https://www.facebook.com/{FB_API_VERSION}/dialog/oauth?{urlencode(params)}"
+    meta_log("CONNECT_INIT", state_payload)
+
+    return redirect(url)
+
+
+# ============================================================
+# STEP 2: OAUTH CALLBACK
+# ============================================================
+
+@app.route("/api/meta/callback", methods=["GET"])
+def meta_callback():
+    code = request.args.get("code")
+    raw_state = request.args.get("state")
+    error = request.args.get("error")
+
+    if error:
+        meta_log_error("OAUTH_ERROR", error)
+        return jsonify({"success": False, "error": error}), 400
+
+    if not code or not raw_state:
+        return jsonify({"success": False, "error": "missing_code_or_state"}), 400
+
+    try:
+        state = serializer.loads(raw_state)
+    except BadSignature:
+        return jsonify({"success": False, "error": "invalid_state"}), 400
+
+    workspace_id = state["workspace_id"]
+    user_id = state.get("user_id")
+
+    # Exchange CODE → CLIENT USER TOKEN
+    token_res = requests.get(
+        f"{GRAPH}/oauth/access_token",
+        params={
+            "client_id": FB_APP_ID,
+            "client_secret": FB_APP_SECRET,
+            "redirect_uri": META_REDIRECT_URI,
+            "code": code,
+        },
+        timeout=10,
+    ).json()
+
+    meta_log("TOKEN_RESPONSE", token_res)
+
+    if "error" in token_res:
+        return jsonify(token_res), 400
+
+    client_user_token = token_res["access_token"]
+
+    return fetch_business_assets(
+        client_user_token=client_user_token,
+        workspace_id=workspace_id,
+        user_id=user_id,
+    )
+
+# ============================================================
+# STEP 3: FETCH CLIENT BUSINESS + AD ACCOUNTS
+# ============================================================
+
+def fetch_business_assets(client_user_token, workspace_id, user_id):
+    """
+    Uses CLIENT USER TOKEN
+    """
+
+    # 1️⃣ Get client business ID
+    biz_res = requests.get(
+        f"{GRAPH}/me",
+        params={
+            "fields": "client_business_id",
+            "access_token": client_user_token,
+        },
+        timeout=10,
+    ).json()
+
+    meta_log("CLIENT_BUSINESS", biz_res)
+
+    client_business_id = biz_res.get("client_business_id")
+    if not client_business_id:
+        return jsonify({
+            "success": False,
+            "error": "client_business_id_missing"
+        }), 400
+
+    # 2️⃣ Get ad accounts client granted
+    ad_res = requests.get(
+    f"{GRAPH}/{client_business_id}/client_ad_accounts",
+    params={
+        "fields": "account_id,name,account_status",
+        "access_token": "EAAZAVAy1umqcBQCgLY10ZBswvWenAsAZBc4NeRTPZAVEosf9SngvZBHEWLShOBr11U3Lo8DqjLuYZC9hJxph5ldc68eRUJlQHfyR7byqZCZCS8wCqhwZBehOcLJ060JaZCv0FuE8zbjTIhr3XVFnX5Hvf2pgykaZB8ygoxDGrocqGJDlrGADqLrQZCxEAwipieriEQZDZD",
+        "limit": 200,
+    },
+    timeout=10,
+).json()
+
+
+    meta_log("AD_ACCOUNTS", ad_res)
+
+    if "error" in ad_res:
+        return jsonify(ad_res), 400
+
+    ad_accounts = [
+        {
+            "id": a["account_id"].replace("act_", ""),
+            "name": a.get("name"),
+            "status": a.get("account_status"),
+        }
+        for a in ad_res.get("data", [])
+    ]
+
+    return jsonify({
+        "success": True,
+        "workspace_id": workspace_id,
+        "user_id": user_id,
+        "client_business_id": client_business_id,
+        "ad_accounts": ad_accounts,
+    })
+
+# ============================================================
+# STEP 4: SAVE SELECTED AD ACCOUNT
+# ============================================================
+
+@app.route("/api/meta/save", methods=["POST"])
+def meta_save():
+    data = request.get_json(force=True)
+
+    ad_account_id = str(data["ad_account_id"]).replace("act_", "")
+    workspace_id = str(data["workspace_id"])
+    user_id = data.get("user_id")
+
+    ad = AdAccount.query.filter_by(
+        account_id=ad_account_id,
+        workspace_id=workspace_id,
+    ).first()
+
+    if not ad:
+        ad = AdAccount(
+            account_id=ad_account_id,
+            workspace_id=workspace_id,
+            user_id=user_id,
+        )
+        db.session.add(ad)
+
+    db.session.commit()
+    return jsonify({"success": True})
+
+# ============================================================
+# STEP 5: SYSTEM USER TOKEN (POST-CONNECTION)
+# ============================================================
+@app.route("/api/meta/mint-system-user-token", methods=["POST"])
+def mint_system_user_token():
+    """
+    Uses USER ADMIN TOKEN to mint a REAL system user token
+    """
+    data = request.get_json(force=True)
+
+    user_admin_token = data.get("user_admin_token")
+    system_user_id = data.get("system_user_id")
+    client_business_id = data.get("client_business_id")
+
+    if not all([user_admin_token, system_user_id, client_business_id]):
+        return jsonify({"error": "missing_parameters"}), 400
+
+    res = requests.post(
+        f"{GRAPH}/{client_business_id}/system_user_access_tokens",
+        params={
+            "system_user_id": system_user_id,
+            "fetch_only": False,
+            "access_token": user_admin_token,
+        },
+        timeout=10,
+    ).json()
+
+    meta_log("SYSTEM_USER_TOKEN_MINT", res)
+
+    if "error" in res:
+        return jsonify(res), 400
+
+    new_token = res["access_token"]
+
+    # 🔐 STORE THIS TOKEN SECURELY (DB / Vault / Secrets Manager)
+    # Example: save to ENV / DB (pseudo)
+    # save_system_user_token(workspace_id, new_token)
+
+    return jsonify({
+        "success": True,
+        "system_user_token": new_token,
+    })
+
+
+@app.route("/api/meta/test-system-token", methods=["GET"])
+def test_system_token():
+    ad_account_id = request.args.get("ad_account_id")
+
+    if not ad_account_id:
+        return jsonify({"error": "missing_ad_account_id"}), 400
+
+    res = requests.get(
+        f"{GRAPH}/act_{ad_account_id}/campaigns",
+        params={
+            "access_token": SYSTEM_USER_TOKEN,
+            "limit": 1,
+        },
+        timeout=10,
+    ).json()
+
+    return jsonify(res)
+

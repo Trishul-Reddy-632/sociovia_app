@@ -1,0 +1,444 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -----------------------------------------
+   Sociovia — Premium Luxury Theme (HSL)
+   - Luxury color palette (brandy, mahogany, gold, velvet)
+   - Rich gradients, gilded shadows, glass accents
+   - Tailwind-safe: hover split, no invalid @apply variants
+   - Keeps original structure & light/dark tokens
+   ----------------------------------------- */
+
+@layer base {
+     :root {
+        /* ---------- Luxury Palette (light theme) ---------- */
+        /* Background / surfaces */
+        --background: 38 28% 96%;
+        /* champagne / warm cream */
+        --foreground: 230 12% 12%;
+        /* deep charcoal text */
+        --card: 0 0% 100%;
+        --card-foreground: 230 12% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 230 12% 12%;
+        /* Primary (brand accent) — Brandy / Burnished Gold */
+        --primary: 42 95% 52%;
+        /* burnished gold */
+        --primary-foreground: 0 0% 8%;
+        --primary-glow: 42 95% 64%;
+        /* Secondary — Velvet / Deep Indigo for text and strong contrast */
+        --secondary: 236 60% 12%;
+        /* velvet indigo */
+        --secondary-foreground: 0 0% 98%;
+        /* Accent — Mahogany / Ruby for contrast CTA */
+        --accent: 8 70% 36%;
+        /* mahogany */
+        --accent-foreground: 0 0% 98%;
+        --accent-glow: 8 70% 48%;
+        /* Muted & support */
+        --muted: 38 18% 92%;
+        --muted-foreground: 230 10% 45%;
+        /* Destructive (error) kept red but toned) */
+        --destructive: 345 78% 50%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 38 18% 90%;
+        --input: 0 0% 100%;
+        --ring: 42 95% 52%;
+        /* Radii and scale */
+        --radius: 0.75rem;
+        --radius-sm: 0.4rem;
+        --radius-lg: 1.25rem;
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+        --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+        --gradient-hero: linear-gradient(135deg, hsl(236 48% 8% / 0.95), hsl(var(--accent) / 0.95));
+        --gradient-feature: linear-gradient(180deg, hsl(var(--card)), hsl(var(--muted)));
+        /* Shadows (gilded / velvet) */
+        --shadow-soft: 0 8px 26px -8px hsl(236 60% 12% / 0.08);
+        --shadow-primary: 0 14px 48px -16px hsl(var(--primary) / 0.18);
+        --shadow-accent: 0 10px 36px -12px hsl(var(--accent) / 0.16);
+        --shadow-gilded: 0 18px 60px -20px hsl(var(--primary) / 0.22);
+        /* Motion */
+        --transition-smooth: all 0.36s cubic-bezier(.2, .9, .3, 1);
+        --transition-bounce: all 0.32s cubic-bezier(.34, 1, .66, 1);
+        /* Sidebar tokens */
+        --sidebar-background: 38 28% 96%;
+        --sidebar-foreground: 230 10% 26%;
+        --sidebar-primary: 236 60% 12%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 38 18% 92%;
+        --sidebar-accent-foreground: 230 10% 26%;
+        --sidebar-border: 38 18% 90%;
+        --sidebar-ring: 42 95% 52%;
+    }
+    /* ---------- Dark theme (luxury night) ---------- */
+    .dark {
+        --background: 232 18% 6%;
+        /* deep charcoal background */
+        --foreground: 0 0% 96%;
+        --card: 232 18% 8%;
+        --card-foreground: 0 0% 96%;
+        --popover: 232 18% 8%;
+        --popover-foreground: 0 0% 96%;
+        /* primary becomes brighter gold on dark */
+        --primary: 42 95% 64%;
+        --primary-foreground: 232 18% 6%;
+        --primary-glow: 42 95% 78%;
+        --secondary: 236 40% 20%;
+        --secondary-foreground: 0 0% 96%;
+        --accent: 8 70% 46%;
+        --accent-foreground: 232 18% 6%;
+        --accent-glow: 8 70% 58%;
+        --muted: 232 12% 14%;
+        --muted-foreground: 230 10% 60%;
+        --destructive: 345 78% 46%;
+        --destructive-foreground: 0 0% 96%;
+        --border: 232 12% 14%;
+        --input: 232 18% 8%;
+        --ring: 42 95% 64%;
+        --sidebar-background: 232 12% 10%;
+        --sidebar-foreground: 232 14% 90%;
+        --sidebar-primary: 228 46% 34%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 232 10% 14%;
+        --sidebar-accent-foreground: 0 0% 96%;
+        --sidebar-border: 232 10% 14%;
+        --sidebar-ring: 42 95% 64%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    /* large premium heading helpers */
+    .premium-title {
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: hsl(var(--secondary));
+        letter-spacing: -0.02em;
+    }
+    .premium-kicker {
+        display: inline-block;
+        font-weight: 700;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+        color: hsl(var(--primary-foreground));
+        box-shadow: var(--shadow-gilded);
+    }
+}
+
+
+/* --------- Components (professional & luxurious) --------- */
+
+@layer components {
+    /* Hero — luxury gradient & velvet shadow */
+    .hero {
+        border-radius: calc(var(--radius) * 1.25);
+        padding: 3rem;
+        background: var(--gradient-hero);
+        color: hsl(var(--primary-foreground));
+        box-shadow: var(--shadow-gilded);
+        overflow: hidden;
+    }
+    .hero .lead {
+        font-size: 1.125rem;
+        color: hsl(var(--primary-foreground));
+        opacity: 0.95;
+        max-width: 70ch;
+    }
+    /* Gradients */
+    .primary-gradient {
+        background: var(--gradient-primary);
+    }
+    .accent-gradient {
+        background: var(--gradient-accent);
+    }
+    .feature-gradient {
+        background: var(--gradient-feature);
+    }
+    /* Shadows */
+    .shadow-soft {
+        box-shadow: var(--shadow-soft);
+    }
+    .shadow-primary {
+        box-shadow: var(--shadow-primary);
+    }
+    .shadow-accent {
+        box-shadow: var(--shadow-accent);
+    }
+    .shadow-gilded {
+        box-shadow: var(--shadow-gilded);
+    }
+    /* Transitions */
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+    .transition-bounce {
+        transition: var(--transition-bounce);
+    }
+    /* Hover utilities (split to avoid @apply variant parsing issues) */
+    .hover-lift {
+        @apply transition-smooth;
+    }
+    .hover-lift:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-gilded);
+    }
+    .hover-glow {
+        @apply transition-smooth;
+    }
+    .hover-glow:hover {
+        box-shadow: var(--shadow-primary);
+    }
+    /* Animated border — uses gradient var (pseudo-element safe) */
+    .animated-border {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius);
+    }
+    .animated-border::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary-glow)));
+        opacity: 0;
+        transition: opacity 320ms ease, transform 420ms ease;
+        background-size: 200% 200%;
+        z-index: 0;
+        pointer-events: none;
+        animation: borderGlow 6s ease-in-out infinite;
+    }
+    .animated-border:hover::before {
+        opacity: 0.18;
+        transform: scale(1.02);
+    }
+    .animated-border>* {
+        position: relative;
+        z-index: 1;
+    }
+    /* Buttons — professional, gilded and mahogany */
+    .btn {
+        @apply inline-flex items-center justify-center gap-3 font-medium;
+        padding: 0.7rem 1.1rem;
+        border-radius: 0.8rem;
+        min-height: 46px;
+        transition: var(--transition-smooth);
+    }
+    .btn-primary {
+        background: hsl(var(--primary));
+        color: hsl(var(--primary-foreground));
+        box-shadow: var(--shadow-primary);
+        border: 1px solid hsl(var(--border));
+    }
+    .btn-primary:hover {
+        background: hsl(var(--primary-glow));
+        transform: translateY(-3px);
+    }
+    .btn-accent {
+        background: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+        color: hsl(var(--accent-foreground));
+        box-shadow: var(--shadow-accent);
+        border: 1px solid hsl(var(--border));
+    }
+    .btn-accent:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-gilded);
+    }
+    .btn-ghost {
+        background: transparent;
+        border: 1px solid hsl(var(--border));
+        color: hsl(var(--secondary));
+    }
+    .btn-ghost:hover {
+        background: hsl(var(--muted));
+    }
+    /* Card (professional luxury) */
+    .card {
+        background: hsl(var(--card));
+        color: hsl(var(--card-foreground));
+        border: 1px solid hsl(var(--border));
+        border-radius: calc(var(--radius) * 1.05);
+        padding: 1.25rem;
+        box-shadow: var(--shadow-soft);
+    }
+    .card-title {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: hsl(var(--secondary));
+        margin-bottom: 0.5rem;
+    }
+    .card-sub {
+        color: hsl(var(--muted-foreground));
+        font-size: 0.95rem;
+    }
+    /* Form controls — refined */
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .form-input {
+        padding: 0.6rem 0.75rem;
+        border-radius: 0.6rem;
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--input));
+        color: hsl(var(--foreground));
+        outline: none;
+        transition: box-shadow 180ms ease, border-color 180ms ease;
+    }
+    .form-input:focus {
+        box-shadow: 0 0 0 5px hsl(var(--ring) / 0.12);
+        border-color: hsl(var(--primary));
+    }
+    /* Badge / pill (gilded) */
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+        color: hsl(var(--primary-foreground));
+        font-weight: 700;
+        box-shadow: 0 10px 30px -18px hsl(var(--primary) / 0.22);
+    }
+    /* Nav — refined */
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+        background: linear-gradient(180deg, hsl(var(--card)), hsl(var(--muted)));
+        border-bottom: 1px solid hsl(var(--border));
+        position: sticky;
+        top: 0;
+        z-index: 60;
+    }
+    .nav .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .nav .brand .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, hsl(236 48% 8%), hsl(var(--accent)));
+        box-shadow: var(--shadow-gilded);
+    }
+    .nav .brand .name {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: hsl(var(--secondary));
+    }
+    /* small helpers */
+    .muted {
+        color: hsl(var(--muted-foreground));
+        font-size: 0.95rem;
+    }
+    .kbd {
+        display: inline-block;
+        padding: 0.15rem 0.5rem;
+        border-radius: 6px;
+        background: hsl(var(--muted));
+        border: 1px solid hsl(var(--border));
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* -------- Utilities & Keyframes -------- */
+
+@layer utilities {
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    .animate-pulse-soft {
+        animation: pulseSoft 3s ease-in-out infinite;
+    }
+    .animate-slide-up {
+        animation: slideUp 0.8s ease-out;
+    }
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+    .h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: hsl(var(--secondary));
+    }
+    .h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: hsl(var(--secondary));
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes pulseSoft {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.88;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes borderGlow {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}

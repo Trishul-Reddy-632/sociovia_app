@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+     :root {
+        /* Palette (converted from hex): 
+       #D6E6F2 => 205.7 51.9% 89.4%
+       #C8ABE6 => 269.5 54.1% 78.6%
+       #6EB8E1 => 201.4 65.7% 65.7%
+       #FFFFFF => 0 0% 100%
+    */
+        /* Core foreground/background */
+        --background: 205.7 51.9% 89.4%;
+        --foreground: 220 12% 12%;
+        --card: 0 0% 100%;
+        --card-foreground: 220 12% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 12% 12%;
+        /* Primary - Lavender (mapped from #C8ABE6) */
+        --primary: 269.5 54.1% 78.6%;
+        --primary-foreground: 0 0% 100%;
+        --primary-glow: 269.5 54.1% 88.6%;
+        /* Secondary - keep as dark text for contrast */
+        --secondary: 220 12% 12%;
+        --secondary-foreground: 0 0% 98%;
+        /* Accent - Cyan/Blue (mapped from #6EB8E1) */
+        --accent: 201.4 65.7% 65.7%;
+        --accent-foreground: 0 0% 100%;
+        --accent-glow: 201.4 65.7% 78.7%;
+        --muted: 205.7 51.9% 95%;
+        --muted-foreground: 220 12% 45%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 205.7 51.9% 85%;
+        --input: 0 0% 100%;
+        --ring: 269.5 54.1% 78.6%;
+        /* Beautiful Gradients */
+        --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+        --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+        --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+        --gradient-feature: linear-gradient(180deg, hsl(var(--card)), hsl(var(--muted)));
+        /* Elegant Shadows */
+        --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.08);
+        --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.22);
+        --shadow-accent: 0 8px 25px -8px hsl(var(--accent) / 0.18);
+        --shadow-elegant: 0 20px 60px -20px hsl(var(--secondary) / 0.08);
+        /* Smooth Animations */
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        --radius: 0.5rem;
+        --sidebar-background: 205.7 51.9% 89.4%;
+        --sidebar-foreground: 220 6% 26%;
+        --sidebar-primary: 220 6% 10%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 205.7 51.9% 96%;
+        --sidebar-accent-foreground: 220 6% 10%;
+        --sidebar-border: 205.7 51.9% 85%;
+        --sidebar-ring: 201.4 65.7% 65.7%;
+    }
+    .dark {
+        /* Dark theme: keep structure but tuned for contrast — uses palette hues inverted/lightness adjusted */
+        --background: 220 14% 8%;
+        --foreground: 210 20% 96%;
+        --card: 220 14% 8%;
+        --card-foreground: 210 20% 96%;
+        --popover: 220 14% 8%;
+        --popover-foreground: 210 20% 96%;
+        --primary: 269.5 54.1% 78.6%;
+        --primary-foreground: 220 14% 8%;
+        --primary-glow: 269.5 54.1% 60%;
+        --secondary: 217 18% 15%;
+        --secondary-foreground: 210 20% 96%;
+        --muted: 217 18% 14%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 201.4 65.7% 65.7%;
+        --accent-foreground: 210 20% 96%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 20% 96%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 201.4 65.7% 65.7%;
+        --sidebar-background: 220 12% 6%;
+        --sidebar-foreground: 210 20% 96%;
+        --sidebar-primary: 224.3 76.3% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 220 10% 14%;
+        --sidebar-accent-foreground: 210 20% 96%;
+        --sidebar-border: 220 10% 14%;
+        --sidebar-ring: 201.4 65.7% 65.7%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        /* Use the CSS variable values as actual colors via hsl() in Tailwind utilities */
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    }
+    /* Ensure common elements use the design tokens */
+    .card {
+        background-color: hsl(var(--card));
+        color: hsl(var(--card-foreground));
+        border: 1px solid hsl(var(--border));
+        border-radius: var(--radius);
+    }
+}
+
+@layer components {
+    .hero-gradient {
+        background: var(--gradient-hero);
+    }
+    .primary-gradient {
+        background: var(--gradient-primary);
+    }
+    .accent-gradient {
+        background: var(--gradient-accent);
+    }
+    .feature-gradient {
+        background: var(--gradient-feature);
+    }
+    .shadow-soft {
+        box-shadow: var(--shadow-soft);
+    }
+    .shadow-primary {
+        box-shadow: var(--shadow-primary);
+    }
+    .shadow-accent {
+        box-shadow: var(--shadow-accent);
+    }
+    .shadow-elegant {
+        box-shadow: var(--shadow-elegant);
+    }
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+    .transition-bounce {
+        transition: var(--transition-bounce);
+    }
+    /* Fixed: no spaces after variant names and prefer splitting hover @apply if needed */
+    .hover-lift {
+        @apply transition-smooth;
+    }
+    .hover-lift:hover {
+        @apply -translate-y-2;
+        box-shadow: var(--shadow-elegant);
+    }
+    .hover-glow {
+        @apply transition-smooth;
+    }
+    .hover-glow:hover {
+        box-shadow: var(--shadow-primary);
+    }
+    .animated-border {
+        @apply relative overflow-hidden;
+    }
+    /* Avoid applying Tailwind gradient-from utilities inside pseudo element via @apply.
+     Use the CSS custom gradient we've already declared instead. */
+    .animated-border::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-primary);
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: 300ms;
+        transition-timing-function: ease;
+        background-size: 200% 200%;
+        z-index: 0;
+        pointer-events: none;
+        animation: borderGlow 3s ease-in-out infinite;
+    }
+    .animated-border:hover::before {
+        opacity: 0.2;
+    }
+    /* In case you want the inner content to stack above the pseudo-element */
+    .animated-border>* {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@layer utilities {
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    .animate-pulse-soft {
+        animation: pulseSoft 3s ease-in-out infinite;
+    }
+    .animate-slide-up {
+        animation: slideUp 0.8s ease-out;
+    }
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulseSoft {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes borderGlow {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}

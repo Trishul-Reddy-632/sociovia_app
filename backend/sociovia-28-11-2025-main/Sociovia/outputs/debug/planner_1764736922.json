@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Automation Liberated",
+    "one_line": "Stop troubleshooting. Start scaling. The end-to-end platform engineered for flawless efficiency.",
+    "visual_prompt": "A sophisticated visualization in near-black (#111111). A chaotic, manually drawn flow chart of tasks transforms into a singular, clean, glowing line of cyan light (#00A3E0) moving rapidly forward, symbolizing process simplification.",
+    "keywords": [
+      "Automation",
+      "Scaling",
+      "Efficiency",
+      "Simplification"
+    ],
+    "aspect_ratio": "16:9",
+    "attached_prompt": "Are you tired of manual management and costly ad errors?",
+    "key_points": [
+      "Tired of manual management and costly ad errors?",
+      "End-to-end campaign automation.",
+      "Stop troubleshooting and start scaling."
+    ]
+  },
+  {
+    "title": "Precision Engineered",
+    "one_line": "Harness AI power to guarantee absolute creative precision and maximized market reach.",
+    "visual_prompt": "Close-up shot of a futuristic control panel or HUD (Heads-Up Display) glowing brightly in cyan (#00A3E0) against a deep black background. The display shows perfect data alignment and sharp, geometric lines emphasizing accuracy and reliability.",
+    "keywords": [
+      "AI",
+      "Precision",
+      "Reliability",
+      "Testing"
+    ],
+    "aspect_ratio": "16:9",
+    "attached_prompt": "AI-powered assurance for every campaign.",
+    "key_points": [
+      "AI-powered, collaborative workspace.",
+      "Guaranteeing precision and maximizing your reach.",
+      "Engineered for reliability."
+    ]
+  },
+  {
+    "title": "Speed of Creation",
+    "one_line": "Generate, test, and manage ad creatives faster than ever—all centralized in one powerful place.",
+    "visual_prompt": "A dynamic, abstract visual showing various inputs (data points, creative assets) rapidly converging into a single, vibrant cyan vortex or nexus point on a dark grey canvas (#111111). Motion blur emphasizes immediate speed and centralized control.",
+    "keywords": [
+      "Consolidation",
+      "Speed",
+      "Management",
+      "Workspace"
+    ],
+    "aspect_ratio": "16:9",
+    "attached_prompt": "Unify your workflow and accelerate production.",
+    "key_points": [
+      "Generate, test, and manage ad creatives faster.",
+      "End-to-end campaign automation.",
+      "Stop troubleshooting and start scaling."
+    ]
+  }
+]

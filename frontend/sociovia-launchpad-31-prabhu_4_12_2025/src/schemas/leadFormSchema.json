@@ -1,0 +1,286 @@
+{
+  "schema": {
+    "question_types": [
+      {
+        "id": "q_fullname",
+        "type": "FULL_NAME",
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "required": true,
+        "validation_rules": {
+          "min_length": 2,
+          "max_length": 100
+        },
+        "help_text": "We need your name to address you.",
+        "sample_user_queries": ["John Doe", "Jane Smith", "Alex P."],
+        "ui_hint": "TextInput"
+      },
+      {
+        "id": "q_email",
+        "type": "EMAIL",
+        "label": "Work Email",
+        "placeholder": "name@company.com",
+        "required": true,
+        "validation_rules": {
+          "regex": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+        },
+        "help_text": "We'll send the guide to this address.",
+        "sample_user_queries": ["john@example.com", "jane.doe@corp.co", "hello@startup.io"],
+        "ui_hint": "TextInput"
+      },
+      {
+        "id": "q_phone",
+        "type": "PHONE",
+        "label": "Phone Number",
+        "placeholder": "+1 (555) 000-0000",
+        "required": false,
+        "validation_rules": {
+          "regex": "^\\+?[1-9]\\d{1,14}$"
+        },
+        "help_text": "Optional, for urgent updates.",
+        "sample_user_queries": ["+15551234567", "9876543210", "+442071234567"],
+        "ui_hint": "PhoneInput"
+      },
+      {
+        "id": "q_role",
+        "type": "TEXT",
+        "label": "Job Title",
+        "placeholder": "e.g. Marketing Manager",
+        "required": true,
+        "validation_rules": {
+          "max_length": 50
+        },
+        "help_text": "Your current role.",
+        "sample_user_queries": ["CEO", "Marketing Director", "Freelancer"],
+        "ui_hint": "TextInput"
+      },
+      {
+        "id": "q_bio",
+        "type": "TEXTAREA",
+        "label": "Tell us about your project",
+        "placeholder": "Briefly describe your goals...",
+        "required": false,
+        "validation_rules": {
+          "max_length": 500
+        },
+        "help_text": "Be as specific as you like.",
+        "sample_user_queries": ["I want to scale my ads...", "Launching a new product next month...", "Need help with branding."],
+        "ui_hint": "Textarea"
+      },
+      {
+        "id": "q_budget",
+        "type": "MCQ_SINGLE",
+        "label": "Monthly Budget",
+        "required": true,
+        "options": [
+          { "label": "Less than $1k", "value": "lt_1k" },
+          { "label": "$1k - $5k", "value": "1k_5k" },
+          { "label": "$5k+", "value": "gt_5k" }
+        ],
+        "help_text": "Select your range.",
+        "sample_user_queries": ["Less than $1k", "$1k - $5k", "$5k+"],
+        "ui_hint": "RadioGroup"
+      },
+      {
+        "id": "q_services",
+        "type": "MCQ_MULTI",
+        "label": "Services Needed",
+        "required": true,
+        "options": [
+          { "label": "SEO", "value": "seo" },
+          { "label": "PPC", "value": "ppc" },
+          { "label": "Social Media", "value": "social" }
+        ],
+        "validation_rules": {
+          "min_selection": 1,
+          "max_selection": 3
+        },
+        "help_text": "Choose all that apply.",
+        "sample_user_queries": ["SEO", "PPC, Social Media", "SEO, Social Media"],
+        "ui_hint": "CheckboxGroup"
+      },
+      {
+        "id": "q_subscribe",
+        "type": "BOOLEAN",
+        "label": "Subscribe to newsletter?",
+        "required": false,
+        "help_text": "Get weekly updates.",
+        "sample_user_queries": ["True", "False", "Yes"],
+        "ui_hint": "Switch"
+      },
+      {
+        "id": "q_rating",
+        "type": "RATING",
+        "label": "How urgent is this?",
+        "required": true,
+        "validation_rules": {
+          "min": 1,
+          "max": 5
+        },
+        "help_text": "1 = Not urgent, 5 = ASAP",
+        "sample_user_queries": ["5", "3", "1"],
+        "ui_hint": "RatingStars"
+      },
+      {
+        "id": "q_industry",
+        "type": "DROPDOWN",
+        "label": "Industry",
+        "required": true,
+        "options": [
+          { "label": "Tech", "value": "tech" },
+          { "label": "Retail", "value": "retail" },
+          { "label": "Healthcare", "value": "health" }
+        ],
+        "help_text": "Select your industry.",
+        "sample_user_queries": ["Tech", "Retail", "Healthcare"],
+        "ui_hint": "Select"
+      },
+      {
+        "id": "q_start_date",
+        "type": "DATE",
+        "label": "Preferred Start Date",
+        "required": false,
+        "help_text": "When do you want to begin?",
+        "sample_user_queries": ["2024-01-01", "Next Monday", "ASAP"],
+        "ui_hint": "DatePicker"
+      },
+      {
+        "id": "q_brief",
+        "type": "FILE_UPLOAD",
+        "label": "Upload Brief",
+        "required": false,
+        "validation_rules": {
+          "max_size_mb": 10,
+          "allowed_types": [".pdf", ".docx", ".png"]
+        },
+        "help_text": "Attach any relevant docs.",
+        "sample_user_queries": ["brief.pdf", "specs.docx", "screenshot.png"],
+        "ui_hint": "FileInput"
+      },
+      {
+        "id": "q_website",
+        "type": "TEXT",
+        "label": "Website URL",
+        "placeholder": "https://",
+        "required": true,
+        "validation_rules": {
+          "regex": "^https?://.+"
+        },
+        "conditional_on": {
+          "question_id": "q_services",
+          "operator": "contains",
+          "value": "seo"
+        },
+        "help_text": "Required for SEO audit.",
+        "sample_user_queries": ["https://example.com", "www.mysite.com", "http://landing.page"],
+        "ui_hint": "TextInput"
+      },
+      {
+        "id": "q_address",
+        "type": "ADDRESS",
+        "label": "Business Address",
+        "required": false,
+        "help_text": "Street, City, Zip",
+        "sample_user_queries": ["123 Main St", "NY, 10001", "London, UK"],
+        "ui_hint": "AddressAutocomplete"
+      }
+    ]
+  },
+  "ui_metadata": {
+    "rendering_instructions": [
+      { "type": "FULL_NAME", "component": "Input", "props": { "type": "text", "autoComplete": "name" } },
+      { "type": "EMAIL", "component": "Input", "props": { "type": "email", "autoComplete": "email" } },
+      { "type": "PHONE", "component": "Input", "props": { "type": "tel", "autoComplete": "tel" } },
+      { "type": "TEXT", "component": "Input", "props": { "type": "text" } },
+      { "type": "TEXTAREA", "component": "Textarea", "props": { "rows": 4 } },
+      { "type": "MCQ_SINGLE", "component": "RadioGroup", "props": { "orientation": "vertical" } },
+      { "type": "MCQ_MULTI", "component": "CheckboxGroup", "props": { "orientation": "vertical" } },
+      { "type": "BOOLEAN", "component": "Switch", "props": {} },
+      { "type": "RATING", "component": "RatingStars", "props": { "max": 5 } },
+      { "type": "DROPDOWN", "component": "Select", "props": {} },
+      { "type": "DATE", "component": "DatePicker", "props": { "mode": "single" } },
+      { "type": "FILE_UPLOAD", "component": "FileInput", "props": { "showPreview": true } },
+      { "type": "ADDRESS", "component": "AddressAutocomplete", "props": { "apiKey": "env:MAPS_KEY" } }
+    ],
+    "accessibility": {
+      "error_message_id_pattern": "error-{question_id}",
+      "aria_describedby_pattern": "help-{question_id} error-{question_id}",
+      "required_indicator": "*"
+    },
+    "preview_mode": {
+      "container_class": "max-w-md mx-auto p-4 border rounded shadow-sm bg-white",
+      "field_spacing": "mb-4"
+    },
+    "editor_ux": {
+      "drag_handle_icon": "GripVertical",
+      "delete_confirm": true,
+      "duplicate_action": true
+    },
+    "limits": {
+      "max_options_per_mcq": 20,
+      "max_file_size_mb": 10,
+      "allowed_file_types": [".pdf", ".jpg", ".png", ".doc", ".docx"],
+      "max_questions_per_form": 25
+    },
+    "styling": {
+      "tailwind_classes": {
+        "label": "block text-sm font-medium text-gray-700 mb-1",
+        "input": "w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary",
+        "error_text": "text-xs text-red-500 mt-1",
+        "help_text": "text-xs text-gray-500 mt-1"
+      },
+      "react_state_shape": "interface FieldState { id: string; value: any; valid: boolean; touched: boolean; error?: string; }"
+    }
+  },
+  "publish_payload_example": {
+    "form_name": "Q4 Marketing Inquiry",
+    "intro_text": "Fill out this form to get your free consultation.",
+    "privacy_policy_url": "https://example.com/privacy",
+    "locale": "en_US",
+    "thank_you_text": "Cheers! We will be in touch within 24 hours.",
+    "questions": [
+      {
+        "id": "q1",
+        "type": "FULL_NAME",
+        "label": "Full Name",
+        "required": true
+      },
+      {
+        "id": "q2",
+        "type": "EMAIL",
+        "label": "Email",
+        "required": true
+      },
+      {
+        "id": "q3",
+        "type": "MCQ_SINGLE",
+        "label": "Are you a current customer?",
+        "options": [
+          { "label": "Yes", "value": "yes" },
+          { "label": "No", "value": "no" }
+        ],
+        "required": true
+      },
+      {
+        "id": "q4",
+        "type": "TEXTAREA",
+        "label": "Please describe your issue",
+        "conditional_on": {
+          "question_id": "q3",
+          "operator": "eq",
+          "value": "yes"
+        },
+        "required": true
+      },
+      {
+        "id": "q5",
+        "type": "FILE_UPLOAD",
+        "label": "Screenshot (Optional)",
+        "required": false
+      }
+    ],
+    "meta_compatibility": {
+      "note": "Meta leadgen API typically supports FULL_NAME, EMAIL, PHONE, and simple CUSTOM fields. For advanced types (file, rating, conditional) you may need to host the form on your site and collect leads server-side."
+    }
+  }
+}

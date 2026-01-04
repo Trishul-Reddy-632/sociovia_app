@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design system (all colors in HSL) — updated to new palette:
+   #F6C2D3 => hsl(338, 74%, 86%)
+   #F4B1C8 => hsl(332, 69%, 82%)
+   #EF83B9 => hsl(323, 73%, 72%)
+   #9DCD59 => hsl(86, 55%, 58%)
+   #F0EEE6 => hsl(48, 28%, 94%)
+*/
+
+@layer base {
+     :root {
+        /* Core tokens (light theme) */
+        --background: 48 28% 94%;
+        /* #F0EEE6 - cream background */
+        --foreground: 340 15% 12%;
+        /* dark gray/ink for text */
+        --card: 0 0% 100%;
+        /* white cards */
+        --card-foreground: 340 15% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 340 15% 12%;
+        /* Primary family (pinks) */
+        --primary: 323 73% 72%;
+        /* #EF83B9 - vibrant pink */
+        --primary-foreground: 0 0% 100%;
+        --primary-glow: 323 73% 82%;
+        --primary-soft: 338 74% 86%;
+        /* #F6C2D3 - soft pink 1 */
+        --primary-soft-2: 332 69% 82%;
+        /* #F4B1C8 - soft pink 2 */
+        /* Accent (green) */
+        --accent: 86 55% 58%;
+        /* #9DCD59 - parrot green */
+        --accent-foreground: 0 0% 100%;
+        --accent-glow: 86 55% 70%;
+        --muted: 48 28% 96%;
+        /* ultra-pale cream */
+        --muted-foreground: 340 10% 45%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 48 28% 90%;
+        --input: 0 0% 100%;
+        --ring: 323 73% 72%;
+        --radius: 0.5rem;
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+        --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+        --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+        --gradient-feature: linear-gradient(180deg, hsl(var(--card)), hsl(var(--muted)));
+        /* Shadows */
+        --shadow-soft: 0 6px 22px -6px hsl(var(--primary) / 0.08);
+        --shadow-primary: 0 12px 36px -12px hsl(var(--primary) / 0.22);
+        --shadow-accent: 0 8px 28px -8px hsl(var(--accent) / 0.18);
+        --shadow-elegant: 0 20px 60px -20px hsl(var(--foreground) / 0.06);
+        /* Transitions */
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: all 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        /* Sidebar tokens (light theme) */
+        --sidebar-background: 48 28% 94%;
+        --sidebar-foreground: 340 8% 28%;
+        --sidebar-primary: 340 8% 10%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 86 55% 94%;
+        --sidebar-accent-foreground: 340 8% 10%;
+        --sidebar-border: 48 28% 90%;
+        --sidebar-ring: 86 55% 58%;
+    }
+    .dark {
+        /* Dark theme tuned from the same family */
+        --background: 220 12% 6%;
+        --foreground: 0 0% 96%;
+        --card: 220 12% 8%;
+        --card-foreground: 0 0% 96%;
+        --popover: 220 12% 8%;
+        --popover-foreground: 0 0% 96%;
+        /* Keep the pinks as light accents in dark mode */
+        --primary: 323 73% 72%;
+        --primary-foreground: 220 12% 8%;
+        --primary-glow: 323 73% 62%;
+        --primary-soft: 338 74% 86%;
+        --primary-soft-2: 332 69% 82%;
+        --accent: 86 55% 58%;
+        --accent-foreground: 220 12% 8%;
+        --accent-glow: 86 55% 48%;
+        --muted: 217 18% 14%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 96%;
+        --border: 220 10% 14%;
+        --input: 217 18% 14%;
+        --ring: 323 73% 72%;
+        --sidebar-background: 220 12% 6%;
+        --sidebar-foreground: 0 0% 96%;
+        --sidebar-primary: 224 76% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 220 10% 14%;
+        --sidebar-accent-foreground: 0 0% 96%;
+        --sidebar-border: 220 10% 14%;
+        --sidebar-ring: 86 55% 58%;
+    }
+}
+
+
+/* Base element styling */
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        /* Use tokens via hsl() so Tailwind utilities still behave visually */
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    }
+    /* Example card utility to reuse tokens */
+    .card {
+        background-color: hsl(var(--card));
+        color: hsl(var(--card-foreground));
+        border: 1px solid hsl(var(--border));
+        border-radius: var(--radius);
+    }
+}
+
+
+/* Components */
+
+@layer components {
+    .hero-gradient {
+        background: var(--gradient-hero);
+    }
+    .primary-gradient {
+        background: var(--gradient-primary);
+    }
+    .accent-gradient {
+        background: var(--gradient-accent);
+    }
+    .feature-gradient {
+        background: var(--gradient-feature);
+    }
+    .shadow-soft {
+        box-shadow: var(--shadow-soft);
+    }
+    .shadow-primary {
+        box-shadow: var(--shadow-primary);
+    }
+    .shadow-accent {
+        box-shadow: var(--shadow-accent);
+    }
+    .shadow-elegant {
+        box-shadow: var(--shadow-elegant);
+    }
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+    .transition-bounce {
+        transition: var(--transition-bounce);
+    }
+    /* Safe hover application: define base and hover separately to avoid PostCSS @apply variant issues */
+    .hover-lift {
+        @apply transition-smooth;
+    }
+    .hover-lift:hover {
+        @apply -translate-y-2;
+        box-shadow: var(--shadow-elegant);
+    }
+    .hover-glow {
+        @apply transition-smooth;
+    }
+    .hover-glow:hover {
+        box-shadow: var(--shadow-primary);
+    }
+    .animated-border {
+        @apply relative overflow-hidden;
+    }
+    /* Use CSS gradient var for pseudo-element instead of complex @apply in pseudo to avoid toolchain issues */
+    .animated-border::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary-soft-2)), hsl(var(--accent)), hsl(var(--primary-glow)));
+        opacity: 0;
+        transition: opacity 300ms ease, transform 300ms ease;
+        background-size: 200% 200%;
+        z-index: 0;
+        pointer-events: none;
+        animation: borderGlow 3s ease-in-out infinite;
+    }
+    .animated-border:hover::before {
+        opacity: 0.18;
+    }
+    /* Ensure inner content stacks above the animated border */
+    .animated-border>* {
+        position: relative;
+        z-index: 1;
+    }
+    /* Token-based button examples */
+    .btn-primary {
+        background: hsl(var(--primary));
+        color: hsl(var(--primary-foreground));
+        border-radius: calc(var(--radius) / 1.2);
+        padding: 0.5rem 1rem;
+        @apply font-medium;
+        box-shadow: var(--shadow-primary);
+    }
+    .btn-primary:hover {
+        background: hsl(var(--primary-glow));
+    }
+    .btn-accent {
+        background: hsl(var(--accent));
+        color: hsl(var(--accent-foreground));
+        border-radius: calc(var(--radius) / 1.2);
+        padding: 0.45rem 0.9rem;
+        @apply font-medium;
+        box-shadow: var(--shadow-accent);
+    }
+    .btn-accent:hover {
+        background: hsl(var(--accent-glow));
+    }
+}
+
+
+/* Utilities */
+
+@layer utilities {
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    .animate-pulse-soft {
+        animation: pulseSoft 3s ease-in-out infinite;
+    }
+    .animate-slide-up {
+        animation: slideUp 0.8s ease-out;
+    }
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+}
+
+
+/* Keyframes */
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulseSoft {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes borderGlow {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}

@@ -1,0 +1,57 @@
+# CodeRabbit Configuration for Sociovia Frontend
+# https://docs.coderabbit.ai/configuration
+
+language: en-US
+
+reviews:
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  
+  path_instructions:
+    - path: "src/**/*.ts"
+      instructions: |
+        Review TypeScript files for type safety, proper error handling,
+        and adherence to React best practices. Check for any type 'any' usage
+        and suggest proper typing.
+    
+    - path: "src/**/*.tsx"
+      instructions: |
+        Review React components for:
+        - Proper hooks usage (dependencies, cleanup)
+        - Accessibility (ARIA labels, keyboard navigation)
+        - Performance optimizations (useMemo, useCallback where needed)
+        - State management patterns (Zustand usage)
+        - Component composition and reusability
+    
+    - path: "src/**/api/**"
+      instructions: |
+        Security review:
+        - Check for proper authentication headers
+        - Input validation before API calls
+        - No hardcoded credentials or API keys
+        - Proper error handling for network failures
+        - Rate limiting considerations
+    
+    - path: "src/**/hooks/**"
+      instructions: |
+        Review custom hooks for:
+        - Proper cleanup in useEffect
+        - Correct dependency arrays
+        - Avoiding infinite loops
+        - Memoization where beneficial
+    
+    - path: "src/**/store/**"
+      instructions: |
+        Review Zustand stores for:
+        - Immutable state updates
+        - Proper action naming
+        - Avoiding unnecessary re-renders
+  
+  auto_review:
+    enabled: true
+    drafts: false
+
+chat:
+  auto_reply: true
