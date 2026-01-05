@@ -1,0 +1,786 @@
+﻿git : 02:27:09.620529 http.c:914    
+          == Info: Uses proxy env 
+variable no_proxy == 
+'localhost,127.0.0.1'
+At line:1 char:30
++ ... :GIT_CURL_VERBOSE = '1'; git 
+push -u origin main --force 2>&1 | 
+Out-F ...
++                              
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSp 
+   ecified: (02:27:09.620529...hos  
+  t,127.0.0.1':String) [], Remote   
+ Exception
+    + FullyQualifiedErrorId : Nativ 
+   eCommandError
+ 
+02:27:09.620529 http.c:914          
+    == Info: Couldn't find host 
+github.com in the .netrc file; 
+using defaults
+02:27:09.665137 http.c:914          
+    == Info: Host github.com:443 
+was resolved.
+02:27:09.665137 http.c:914          
+    == Info: IPv6: (none)
+02:27:09.665137 http.c:914          
+    == Info: IPv4: 20.207.73.82
+02:27:09.665137 http.c:914          
+    == Info:   Trying 
+20.207.73.82:443...
+02:27:09.693819 http.c:914          
+    == Info: ALPN: curl offers 
+h2,http/1.1
+02:27:09.693819 http.c:914          
+    == Info: TLSv1.3 (OUT), TLS 
+handshake, Client hello (1):
+02:27:09.926829 http.c:914          
+    == Info:  CAfile: C:/Program Fil
+es/Git/mingw64/etc/ssl/certs/ca-bund
+le.crt
+02:27:09.926829 http.c:914          
+    == Info:  CApath: none
+02:27:09.926829 http.c:914          
+    == Info: TLSv1.3 (IN), TLS 
+handshake, Server hello (2):
+02:27:09.926829 http.c:914          
+    == Info: TLSv1.3 (IN), TLS 
+handshake, Encrypted Extensions (8):
+02:27:09.926829 http.c:914          
+    == Info: TLSv1.3 (IN), TLS 
+handshake, Certificate (11):
+02:27:09.927456 http.c:914          
+    == Info: TLSv1.3 (IN), TLS 
+handshake, CERT verify (15):
+02:27:09.928460 http.c:914          
+    == Info: TLSv1.3 (IN), TLS 
+handshake, Finished (20):
+02:27:09.928460 http.c:914          
+    == Info: TLSv1.3 (OUT), TLS 
+change cipher, Change cipher spec 
+(1):
+02:27:09.928460 http.c:914          
+    == Info: TLSv1.3 (OUT), TLS 
+handshake, Finished (20):
+02:27:09.928460 http.c:914          
+    == Info: SSL connection using 
+TLSv1.3 / TLS_AES_128_GCM_SHA256 / 
+x25519 / id-ecPublicKey
+02:27:09.928460 http.c:914          
+    == Info: ALPN: server accepted 
+h2
+02:27:09.928460 http.c:914          
+    == Info: Server certificate:
+02:27:09.928460 http.c:914          
+    == Info:  subject: CN=github.com
+02:27:09.928460 http.c:914          
+    == Info:  start date: Feb  5 
+00:00:00 2025 GMT
+02:27:09.928460 http.c:914          
+    == Info:  expire date: Feb  5 
+23:59:59 2026 GMT
+02:27:09.928460 http.c:914          
+    == Info:  subjectAltName: host 
+"github.com" matched cert's 
+"github.com"
+02:27:09.928460 http.c:914          
+    == Info:  issuer: C=GB; 
+ST=Greater Manchester; L=Salford; 
+O=Sectigo Limited; CN=Sectigo ECC 
+Domain Validation Secure Server CA
+02:27:09.928460 http.c:914          
+    == Info:  SSL certificate 
+verify ok.
+02:27:09.928460 http.c:914          
+    == Info:   Certificate level 0: 
+Public key type EC/prime256v1 
+(256/128 Bits/secBits), signed 
+using ecdsa-with-SHA256
+02:27:09.928460 http.c:914          
+    == Info:   Certificate level 1: 
+Public key type EC/prime256v1 
+(256/128 Bits/secBits), signed 
+using ecdsa-with-SHA384
+02:27:09.928460 http.c:914          
+    == Info:   Certificate level 2: 
+Public key type EC/secp384r1 
+(384/192 Bits/secBits), signed 
+using ecdsa-with-SHA384
+02:27:09.928460 http.c:914          
+    == Info: Connected to 
+github.com (20.207.73.82) port 443
+02:27:09.928460 http.c:914          
+    == Info: using HTTP/2
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] OPENED 
+stream for https://github.com/Trishu
+l-Reddy-632/sociovia_app.git/info/re
+fs?service=git-receive-pack
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] [:method: 
+GET]
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] [:scheme: 
+https]
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] 
+[:authority: github.com]
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] [:path: /T
+rishul-Reddy-632/sociovia_app.git/in
+fo/refs?service=git-receive-pack]
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] 
+[user-agent: git/2.50.1.windows.1]
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] [accept: 
+*/*]
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] 
+[accept-encoding: deflate, gzip, 
+br, zstd]
+02:27:09.928460 http.c:914          
+    == Info: [HTTP/2] [1] [pragma: 
+no-cache]
+02:27:09.928460 http.c:861          
+    => Send header, 0000000210 
+bytes (0x000000d2)
+02:27:09.928460 http.c:873          
+    => Send header: GET /Trishul-Red
+dy-632/sociovia_app.git/info/refs?se
+rvice=git-receive-pack HTTP/2
+02:27:09.928460 http.c:873          
+    => Send header: Host: github.com
+02:27:09.928460 http.c:873          
+    => Send header: User-Agent: 
+git/2.50.1.windows.1
+02:27:09.928460 http.c:873          
+    => Send header: Accept: */*
+02:27:09.928460 http.c:873          
+    => Send header: 
+Accept-Encoding: deflate, gzip, br, 
+zstd
+02:27:09.928460 http.c:873          
+    => Send header: Pragma: no-cache
+02:27:09.928460 http.c:873          
+    => Send header:
+02:27:09.928460 http.c:914          
+    == Info: Request completely 
+sent off
+02:27:09.968893 http.c:914          
+    == Info: TLSv1.3 (IN), TLS 
+handshake, Newsession Ticket (4):
+02:27:09.968893 http.c:914          
+    == Info: TLSv1.3 (IN), TLS 
+handshake, Newsession Ticket (4):
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000013 
+bytes (0x0000000d)
+02:27:10.171609 http.c:873          
+    <= Recv header: HTTP/2 401
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000026 
+bytes (0x0000001a)
+02:27:10.171609 http.c:873          
+    <= Recv header: server: 
+GitHub-Babel/3.0
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000054 
+bytes (0x00000036)
+02:27:10.171609 http.c:873          
+    <= Recv header: 
+content-security-policy: 
+default-src 'none'; sandbox
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000041 
+bytes (0x00000029)
+02:27:10.171609 http.c:873          
+    <= Recv header: content-type: 
+text/plain; charset=UTF-8
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000040 
+bytes (0x00000028)
+02:27:10.171609 http.c:873          
+    <= Recv header: 
+www-authenticate: Basic 
+realm="GitHub"
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000020 
+bytes (0x00000014)
+02:27:10.171609 http.c:873          
+    <= Recv header: content-length: 
+26
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000037 
+bytes (0x00000025)
+02:27:10.171609 http.c:873          
+    <= Recv header: date: Sun, 04 
+Jan 2026 20:57:09 GMT
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000023 
+bytes (0x00000017)
+02:27:10.171609 http.c:873          
+    <= Recv header: 
+x-frame-options: DENY
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000073 
+bytes (0x00000049)
+02:27:10.171609 http.c:873          
+    <= Recv header: 
+strict-transport-security: 
+max-age=31536000; 
+includeSubDomains; preload
+02:27:10.171609 http.c:861          
+    <= Recv header, 0000000059 
+bytes (0x0000003b)
+02:27:10.171609 http.c:873          
+    <= Recv header: 
+x-github-request-id: 
+7EB4:2B30BE:1F3582F:2462C67:695AD425
+02:27:10.172613 http.c:861          
+    <= Recv header, 0000000002 
+bytes (0x00000002)
+02:27:10.172613 http.c:873          
+    <= Recv header:
+02:27:10.172613 http.c:914          
+    == Info: Connection #0 to host 
+github.com left intact
+02:27:17.488140 http.c:914          
+    == Info: Uses proxy env 
+variable no_proxy == 
+'localhost,127.0.0.1'
+02:27:17.488140 http.c:914          
+    == Info: Re-using existing 
+https: connection with host 
+github.com
+02:27:17.488140 http.c:914          
+    == Info: Server auth using 
+Basic with user 'Trishul-Reddy-632'
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] OPENED 
+stream for https://github.com/Trishu
+l-Reddy-632/sociovia_app.git/info/re
+fs?service=git-receive-pack
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] [:method: 
+GET]
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] [:scheme: 
+https]
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] 
+[:authority: github.com]
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] [:path: /T
+rishul-Reddy-632/sociovia_app.git/in
+fo/refs?service=git-receive-pack]
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] 
+[authorization: Basic <redacted>]
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] 
+[user-agent: git/2.50.1.windows.1]
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] [accept: 
+*/*]
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] 
+[accept-encoding: deflate, gzip, 
+br, zstd]
+02:27:17.488140 http.c:914          
+    == Info: [HTTP/2] [3] [pragma: 
+no-cache]
+02:27:17.488140 http.c:861          
+    => Send header, 0000000313 
+bytes (0x00000139)
+02:27:17.488140 http.c:873          
+    => Send header: GET /Trishul-Red
+dy-632/sociovia_app.git/info/refs?se
+rvice=git-receive-pack HTTP/2
+02:27:17.488140 http.c:873          
+    => Send header: Host: github.com
+02:27:17.488140 http.c:873          
+    => Send header: Authorization: 
+Basic <redacted>
+02:27:17.488140 http.c:873          
+    => Send header: User-Agent: 
+git/2.50.1.windows.1
+02:27:17.488140 http.c:873          
+    => Send header: Accept: */*
+02:27:17.488140 http.c:873          
+    => Send header: 
+Accept-Encoding: deflate, gzip, br, 
+zstd
+02:27:17.488140 http.c:873          
+    => Send header: Pragma: no-cache
+02:27:17.488140 http.c:873          
+    => Send header:
+02:27:17.488140 http.c:914          
+    == Info: Request completely 
+sent off
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000013 
+bytes (0x0000000d)
+02:27:17.760493 http.c:873          
+    <= Recv header: HTTP/2 200
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000026 
+bytes (0x0000001a)
+02:27:17.760493 http.c:873          
+    <= Recv header: server: 
+GitHub-Babel/3.0
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000060 
+bytes (0x0000003c)
+02:27:17.760493 http.c:873          
+    <= Recv header: content-type: ap
+plication/x-git-receive-pack-adverti
+sement
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000054 
+bytes (0x00000036)
+02:27:17.760493 http.c:873          
+    <= Recv header: 
+content-security-policy: 
+default-src 'none'; sandbox
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000040 
+bytes (0x00000028)
+02:27:17.760493 http.c:873          
+    <= Recv header: expires: Fri, 
+01 Jan 1980 00:00:00 GMT
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000018 
+bytes (0x00000012)
+02:27:17.760493 http.c:873          
+    <= Recv header: pragma: no-cache
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000053 
+bytes (0x00000035)
+02:27:17.760493 http.c:873          
+    <= Recv header: cache-control: 
+no-cache, max-age=0, must-revalidate
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000023 
+bytes (0x00000017)
+02:27:17.760493 http.c:873          
+    <= Recv header: vary: 
+Accept-Encoding
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000037 
+bytes (0x00000025)
+02:27:17.760493 http.c:873          
+    <= Recv header: date: Sun, 04 
+Jan 2026 20:57:17 GMT
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000023 
+bytes (0x00000017)
+02:27:17.760493 http.c:873          
+    <= Recv header: 
+x-frame-options: DENY
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000073 
+bytes (0x00000049)
+02:27:17.760493 http.c:873          
+    <= Recv header: 
+strict-transport-security: 
+max-age=31536000; 
+includeSubDomains; preload
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000059 
+bytes (0x0000003b)
+02:27:17.760493 http.c:873          
+    <= Recv header: 
+x-github-request-id: 
+7EB4:2B30BE:1F35C2C:246314E:695AD425
+02:27:17.760493 http.c:861          
+    <= Recv header, 0000000002 
+bytes (0x00000002)
+02:27:17.760493 http.c:873          
+    <= Recv header:
+02:27:17.760493 http.c:914          
+    == Info: Connection #0 to host 
+github.com left intact
+02:27:19.940994 http.c:914          
+    == Info: Uses proxy env 
+variable no_proxy == 
+'localhost,127.0.0.1'
+02:27:19.940994 http.c:914          
+    == Info: Re-using existing 
+https: connection with host 
+github.com
+02:27:19.940994 http.c:914          
+    == Info: Server auth using 
+Basic with user 'Trishul-Reddy-632'
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] OPENED 
+stream for https://github.com/Trishu
+l-Reddy-632/sociovia_app.git/git-rec
+eive-pack
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] [:method: 
+POST]
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] [:scheme: 
+https]
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] 
+[:authority: github.com]
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] [:path: /T
+rishul-Reddy-632/sociovia_app.git/gi
+t-receive-pack]
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] 
+[authorization: Basic <redacted>]
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] 
+[user-agent: git/2.50.1.windows.1]
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] 
+[content-type: application/x-git-rec
+eive-pack-request]
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] [accept: a
+pplication/x-git-receive-pack-result
+]
+02:27:19.940994 http.c:914          
+    == Info: [HTTP/2] [5] 
+[content-length: 4]
+02:27:19.941995 http.c:861          
+    => Send header, 0000000343 
+bytes (0x00000157)
+02:27:19.941995 http.c:873          
+    => Send header: POST /Trishul-Re
+ddy-632/sociovia_app.git/git-receive
+-pack HTTP/2
+02:27:19.941995 http.c:873          
+    => Send header: Host: github.com
+02:27:19.941995 http.c:873          
+    => Send header: Authorization: 
+Basic <redacted>
+02:27:19.941995 http.c:873          
+    => Send header: User-Agent: 
+git/2.50.1.windows.1
+02:27:19.941995 http.c:873          
+    => Send header: Content-Type: ap
+plication/x-git-receive-pack-request
+02:27:19.941995 http.c:873          
+    => Send header: Accept: applicat
+ion/x-git-receive-pack-result
+02:27:19.941995 http.c:873          
+    => Send header: Content-Length: 
+4
+02:27:19.941995 http.c:873          
+    => Send header:
+02:27:19.941995 http.c:914          
+    == Info: upload completely sent 
+off: 4 bytes
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000013 
+bytes (0x0000000d)
+02:27:20.218019 http.c:873          
+    <= Recv header: HTTP/2 200
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000026 
+bytes (0x0000001a)
+02:27:20.218019 http.c:873          
+    <= Recv header: server: 
+GitHub-Babel/3.0
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000053 
+bytes (0x00000035)
+02:27:20.218019 http.c:873          
+    <= Recv header: content-type: ap
+plication/x-git-receive-pack-result
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000054 
+bytes (0x00000036)
+02:27:20.218019 http.c:873          
+    <= Recv header: 
+content-security-policy: 
+default-src 'none'; sandbox
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000040 
+bytes (0x00000028)
+02:27:20.218019 http.c:873          
+    <= Recv header: expires: Fri, 
+01 Jan 1980 00:00:00 GMT
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000018 
+bytes (0x00000012)
+02:27:20.218019 http.c:873          
+    <= Recv header: pragma: no-cache
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000053 
+bytes (0x00000035)
+02:27:20.218019 http.c:873          
+    <= Recv header: cache-control: 
+no-cache, max-age=0, must-revalidate
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000023 
+bytes (0x00000017)
+02:27:20.218019 http.c:873          
+    <= Recv header: vary: 
+Accept-Encoding
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000019 
+bytes (0x00000013)
+02:27:20.218019 http.c:873          
+    <= Recv header: content-length: 
+0
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000037 
+bytes (0x00000025)
+02:27:20.218019 http.c:873          
+    <= Recv header: date: Sun, 04 
+Jan 2026 20:57:19 GMT
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000023 
+bytes (0x00000017)
+02:27:20.218019 http.c:873          
+    <= Recv header: 
+x-frame-options: DENY
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000073 
+bytes (0x00000049)
+02:27:20.218019 http.c:873          
+    <= Recv header: 
+strict-transport-security: 
+max-age=31536000; 
+includeSubDomains; preload
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000059 
+bytes (0x0000003b)
+02:27:20.218019 http.c:873          
+    <= Recv header: 
+x-github-request-id: 
+7EB4:2B30BE:1F35D7C:24632E7:695AD42D
+02:27:20.218019 http.c:861          
+    <= Recv header, 0000000002 
+bytes (0x00000002)
+02:27:20.218019 http.c:873          
+    <= Recv header:
+02:27:20.218019 http.c:914          
+    == Info: Connection #0 to host 
+github.com left intact
+02:27:20.218019 http.c:914          
+    == Info: Uses proxy env 
+variable no_proxy == 
+'localhost,127.0.0.1'
+02:27:20.218019 http.c:914          
+    == Info: Re-using existing 
+https: connection with host 
+github.com
+02:27:20.218019 http.c:914          
+    == Info: Server auth using 
+Basic with user 'Trishul-Reddy-632'
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] OPENED 
+stream for https://github.com/Trishu
+l-Reddy-632/sociovia_app.git/git-rec
+eive-pack
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] [:method: 
+POST]
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] [:scheme: 
+https]
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] 
+[:authority: github.com]
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] [:path: /T
+rishul-Reddy-632/sociovia_app.git/gi
+t-receive-pack]
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] 
+[authorization: Basic <redacted>]
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] 
+[user-agent: git/2.50.1.windows.1]
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] 
+[accept-encoding: deflate, gzip, 
+br, zstd]
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] 
+[content-type: application/x-git-rec
+eive-pack-request]
+02:27:20.218019 http.c:914          
+    == Info: [HTTP/2] [7] [accept: a
+pplication/x-git-receive-pack-result
+]
+02:27:20.218019 http.c:861          
+    => Send header, 0000000366 
+bytes (0x0000016e)
+02:27:20.218019 http.c:873          
+    => Send header: POST /Trishul-Re
+ddy-632/sociovia_app.git/git-receive
+-pack HTTP/2
+02:27:20.218019 http.c:873          
+    => Send header: Host: github.com
+02:27:20.218019 http.c:873          
+    => Send header: Authorization: 
+Basic <redacted>
+02:27:20.218019 http.c:873          
+    => Send header: User-Agent: 
+git/2.50.1.windows.1
+02:27:20.218019 http.c:873          
+    => Send header: 
+Accept-Encoding: deflate, gzip, br, 
+zstd
+02:27:20.218019 http.c:873          
+    => Send header: Content-Type: ap
+plication/x-git-receive-pack-request
+02:27:20.218019 http.c:873          
+    => Send header: Accept: applicat
+ion/x-git-receive-pack-result
+02:27:20.218019 http.c:873          
+    => Send header:
+02:27:42.103525 http.c:914          
+    == Info: upload completely sent 
+off: 142571535 bytes
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000013 
+bytes (0x0000000d)
+02:27:42.864715 http.c:873          
+    <= Recv header: HTTP/2 200
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000026 
+bytes (0x0000001a)
+02:27:42.864715 http.c:873          
+    <= Recv header: server: 
+GitHub-Babel/3.0
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000053 
+bytes (0x00000035)
+02:27:42.864715 http.c:873          
+    <= Recv header: content-type: ap
+plication/x-git-receive-pack-result
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000054 
+bytes (0x00000036)
+02:27:42.864715 http.c:873          
+    <= Recv header: 
+content-security-policy: 
+default-src 'none'; sandbox
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000040 
+bytes (0x00000028)
+02:27:42.864715 http.c:873          
+    <= Recv header: expires: Fri, 
+01 Jan 1980 00:00:00 GMT
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000018 
+bytes (0x00000012)
+02:27:42.864715 http.c:873          
+    <= Recv header: pragma: no-cache
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000053 
+bytes (0x00000035)
+02:27:42.864715 http.c:873          
+    <= Recv header: cache-control: 
+no-cache, max-age=0, must-revalidate
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000023 
+bytes (0x00000017)
+02:27:42.864715 http.c:873          
+    <= Recv header: vary: 
+Accept-Encoding
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000037 
+bytes (0x00000025)
+02:27:42.864715 http.c:873          
+    <= Recv header: date: Sun, 04 
+Jan 2026 20:57:42 GMT
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000023 
+bytes (0x00000017)
+02:27:42.864715 http.c:873          
+    <= Recv header: 
+x-frame-options: DENY
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000073 
+bytes (0x00000049)
+02:27:42.864715 http.c:873          
+    <= Recv header: 
+strict-transport-security: 
+max-age=31536000; 
+includeSubDomains; preload
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000059 
+bytes (0x0000003b)
+02:27:42.864715 http.c:873          
+    <= Recv header: 
+x-github-request-id: 
+7EB4:2B30BE:1F35D9A:2463313:695AD430
+02:27:42.864715 http.c:861          
+    <= Recv header, 0000000002 
+bytes (0x00000002)
+02:27:42.864715 http.c:873          
+    <= Recv header:
+02:27:44.388125 http.c:914          
+    == Info: Connection #0 to host 
+github.com left intact
+remote: error: GH013: Repository 
+rule violations found for 
+refs/heads/main.        
+remote: 
+remote: - GITHUB PUSH PROTECTION    
+    
+remote:   ΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇ
+öΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇ
+öΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇ
+öΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇö        
+remote:     Resolve the following 
+violations before pushing again     
+   
+remote: 
+remote:     - Push cannot contain 
+secrets        
+remote: 
+remote:             
+remote:      (?) Learn how to 
+resolve a blocked push        
+remote:      https://docs.github.com
+/code-security/secret-scanning/worki
+ng-with-secret-scanning-and-push-pro
+tection/working-with-push-protection
+-from-the-command-line#resolving-a-b
+locked-push        
+remote:             
+remote:             
+remote:       ΓÇöΓÇö Google Cloud 
+Service Account Credentials 
+ΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇöΓÇö      
+  
+remote:        locations:        
+remote:          - commit: a774563d9
+9d32be9130e75e5a9c2f94b918a2f93     
+   
+remote:            path: backend/soc
+iovia-28-11-2025-main/Sociovia/angul
+ar-sorter-473216-k8-835a67a5574c.jso
+n:1        
+remote:             
+remote:        (?) To push, remove 
+secret from commit(s) or follow 
+this URL to allow the secret.       
+ 
+remote:        https://github.com/Tr
+ishul-Reddy-632/sociovia_app/securit
+y/secret-scanning/unblock-secret/37o
+CeKp5pJ13uuMg9ljVybsnP6t        
+remote:             
+remote: 
+remote: 
+To https://github.com/Trishul-Reddy-
+632/sociovia_app.git
+ ! [remote rejected] main -> main 
+(push declined due to repository 
+rule violations)
+error: failed to push some refs to '
+https://github.com/Trishul-Reddy-632
+/sociovia_app.git'

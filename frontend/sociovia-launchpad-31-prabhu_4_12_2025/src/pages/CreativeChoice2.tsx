@@ -344,7 +344,7 @@ export default function CreativeEditor() {
         });
       }
     } catch { /* ignore */ }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   useEffect(() => {
@@ -368,7 +368,7 @@ export default function CreativeEditor() {
     if (!creative.cta && workspaceDefaultCta) {
       setCreative({ cta: workspaceDefaultCta });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [workspaceDefaultCta]);
 
   useEffect(() => {
@@ -378,7 +378,7 @@ export default function CreativeEditor() {
         setCreative({ url: maybe });
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [ws]);
 
   /* ---------- Image Upload Helpers ---------- */

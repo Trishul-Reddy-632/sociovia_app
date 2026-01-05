@@ -39,17 +39,17 @@ export function MessageBubble({ message }: MessageBubbleProps) {
         {/* Timestamp and status */}
         <div className="flex items-center gap-1 text-xs opacity-70">
           <span>
-            {message.created_at 
+            {message.created_at
               ? (() => {
-                  try {
-                    return format(new Date(message.created_at), 'HH:mm');
-                  } catch {
-                    return new Date(message.created_at).toLocaleTimeString('en-US', { 
-                      hour: '2-digit', 
-                      minute: '2-digit' 
-                    });
-                  }
-                })()
+                try {
+                  return format(new Date(message.created_at), 'HH:mm');
+                } catch {
+                  return new Date(message.created_at).toLocaleTimeString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  });
+                }
+              })()
               : '--:--'}
           </span>
           {isOutgoing && (
@@ -80,13 +80,14 @@ function renderMessageContent(message: ConversationMessage) {
   }
 
   switch (type) {
-    case 'text':
+    case 'text': {
       const textContent = content?.text || content?.body || '';
       return (
         <p className="whitespace-pre-wrap break-words">
           {textContent || 'Empty message'}
         </p>
       );
+    }
 
     case 'template':
       return (

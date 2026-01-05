@@ -1,0 +1,18 @@
+﻿node.exe : (node:8724) 
+ExperimentalWarning: Support for 
+loading ES Module in require() is 
+an experimental feature and might 
+change at any time
+At C:\Program 
+Files\nodejs\npx.ps1:29 char:3
++   & $NODE_EXE $NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSp 
+   ecified: ((node:8724) Exp...nge  
+   at any time:String) [], Remote   
+ Exception
+    + FullyQualifiedErrorId : Nativ 
+   eCommandError
+ 
+(Use `node --trace-warnings ...` to 
+show where the warning was created)

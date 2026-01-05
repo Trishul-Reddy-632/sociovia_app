@@ -194,7 +194,7 @@ export default function FloatingAssistant({
     };
 
     void loadConversation();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [conversationId]);
 
   // Agentic tabs state

@@ -103,7 +103,7 @@ const VerifyEmail = () => {
           );
         } catch (e) {
           // non-fatal; warn in console
-          // eslint-disable-next-line no-console
+           
           console.warn("Could not write sv_user to localStorage:", e);
         }
         // -------------------------------------------------------------------

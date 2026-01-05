@@ -35,7 +35,7 @@ async function request<T = any>(path: string, opts: RequestInit = {}): Promise<A
   }
 
   // Destructure headers from opts to avoid overwriting our constructed headers object during spread
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
   const { headers: _optsHeaders, ...restOpts } = opts;
 
   const init: RequestInit = {

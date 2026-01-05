@@ -78,7 +78,7 @@ export default function CampaignDetails(): JSX.Element {
   useEffect(() => {
     if (!id) return;
     loadCampaignInfo(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [id]);
 
   async function api(path: string, opts: RequestInit = {}) {

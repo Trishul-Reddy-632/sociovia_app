@@ -98,7 +98,7 @@ export default function CampaignWorkspace({ className = "" }: { className?: stri
 
   useEffect(() => {
     loadCampaigns();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   async function api(path: string, opts: RequestInit = {}) {

@@ -39,7 +39,7 @@ export default function TokenConfigPanel({ config, onConfigChange }: TokenConfig
         apiVersion: savedVersion,
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   const handleSave = () => {

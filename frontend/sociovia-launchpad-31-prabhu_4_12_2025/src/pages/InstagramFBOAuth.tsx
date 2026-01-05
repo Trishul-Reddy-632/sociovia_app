@@ -129,7 +129,7 @@ export default forwardRef<any, FacebookPageOAuthProps>(function FacebookPageOAut
     console.debug("[FacebookPageOAuth] sv_token present:", !!getToken());
     handleFragmentPayloadIfAny();
     return () => cleanupPopup();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   function cleanupPopup() {

@@ -361,7 +361,7 @@ export default function ObjectiveSelection() {
       }
     };
     fetchSuggestions();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [storedWorkspace]);
 
   const handleSelect = (objectiveId: ObjectiveType) => {

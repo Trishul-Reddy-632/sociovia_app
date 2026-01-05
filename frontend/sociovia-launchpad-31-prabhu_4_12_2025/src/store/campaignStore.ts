@@ -143,6 +143,7 @@ export interface CampaignState {
   creative: CreativeShape;
   selectedImages: SelectedImages | null;
   selectedForm?: { id: string; name: string; viewUrl: string; createdOn: string } | null; // For global tracking
+  workspace?: any; // Workspace data used across campaign creation
   setStep: (step: number) => void;
   setObjective: (objective: ObjectiveType) => void;
   setCampaign: (campaign: Partial<Campaign>) => void;
@@ -152,6 +153,7 @@ export interface CampaignState {
   setCreative: (creative: Partial<CreativeShape>) => void;
   setSelectedImages: (data: SelectedImages) => void;
   setSelectedForm: (form: { id: string; name: string; viewUrl: string; createdOn: string } | null) => void;
+  setWorkspace: (workspace: any) => void;
   reset: () => void;
 }
 
@@ -191,6 +193,7 @@ const initialState = {
   },
   selectedImages: null as SelectedImages | null,
   selectedForm: null,
+  workspace: undefined as any,
 };
 
 export const useCampaignStore = create<CampaignState>()(
@@ -221,6 +224,7 @@ export const useCampaignStore = create<CampaignState>()(
         })),
       setSelectedImages: (data) => set({ selectedImages: data }),
       setSelectedForm: (form) => set({ selectedForm: form }),
+      setWorkspace: (workspace) => set({ workspace }),
       reset: () => set(initialState),
     }),
     {

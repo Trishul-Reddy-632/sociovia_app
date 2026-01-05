@@ -11,7 +11,7 @@
 export interface RouteConfig {
     path: string;
     label: string;
-    parent?: keyof typeof DASHBOARD_ROUTES;
+    parent?: string;  // Route key name, validated at runtime
 }
 
 export const DASHBOARD_ROUTES = {
@@ -167,7 +167,8 @@ export function buildBreadcrumbChain(routeKey: DashboardRouteKey): RouteConfig[]
     while (currentKey) {
         const route = DASHBOARD_ROUTES[currentKey];
         chain.unshift(route);
-        currentKey = route.parent;
+        // Use 'in' check to safely access optional parent property
+        currentKey = ('parent' in route ? route.parent : undefined) as DashboardRouteKey | undefined;
     }
 
     return chain;

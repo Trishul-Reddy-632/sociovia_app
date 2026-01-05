@@ -301,7 +301,7 @@ const TestMessageDemo: React.FC = () => {
 
   // Generate cURL command
   const generateCurl = (): string => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     
     let payload: Record<string, any>;
     
     if (messageType === 'custom') {
@@ -378,7 +378,7 @@ const TestMessageDemo: React.FC = () => {
     try {
       // Send to each recipient via Meta Graph API directly
       for (const recipient of validRecipients) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+         
         let payload: Record<string, any>;
         
         if (messageType === 'custom') {

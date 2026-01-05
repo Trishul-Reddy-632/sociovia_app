@@ -1,0 +1,101 @@
+﻿
+> vite_react_shadcn_ts@0.0.0 lint
+> eslint .
+
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\components\ai-campaign\FinalPreview.tsx
+  215:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\components\ui\location-picker.tsx
+  180:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\components\workflow\InspectorPanel.tsx
+  116:3  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  175:5  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  177:5  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\lib\apiClient.ts
+  38:3  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unused-vars')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\lib\utils.ts
+  14:22  error  Promise executor functions should not be async  no-async-promise-executor
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\marketingUI\CampaignDetails.tsx
+  81:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\marketingUI\ChatUI.tsx
+  2:1  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any', '@typescript-eslint/explicit-module-boundary-types', '@typescript-eslint/no-empty-function', 'no-empty', or 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\marketingUI\MarketingDashboard.tsx
+  101:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\Assistant.tsx
+  197:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\AudienceSetup.tsx
+  190:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  972:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\CreativeChoice2.tsx
+  347:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  371:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  381:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\CreativeEditor.tsx
+  276:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  306:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  348:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\InstagramFBOAuth.tsx
+  132:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\OAuthComplete.tsx
+   88:11  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any')
+  127:5   warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\ObjectiveSelection.tsx
+  364:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\ReviewAndConfirm.tsx
+  616:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\UnderReview.tsx
+  61:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  68:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\UserManagement.tsx
+  24:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\VerifyEmail.tsx
+  106:11  warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\pages\workspace.tsx
+  238:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\whatsapp\components\MessageBubble.tsx
+  84:7  error  Unexpected lexical declaration in case block  no-case-declarations
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\whatsapp\components\TokenConfigPanel.tsx
+  42:5  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\whatsapp\pages\FlowBuilder.tsx
+  307:17  error  Unexpected lexical declaration in case block  no-case-declarations
+  308:17  error  Unexpected lexical declaration in case block  no-case-declarations
+  312:17  error  Unexpected lexical declaration in case block  no-case-declarations
+  317:17  error  Unexpected lexical declaration in case block  no-case-declarations
+  911:33  error  Unexpected lexical declaration in case block  no-case-declarations
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\whatsapp\pages\WhatsAppAutomation.tsx
+   794:9  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  1029:9  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\whatsapp_automation\api\whatsappApi.ts
+  517:1  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any')
+
+C:\Users\prabh\Downloads\Sociovia_app\frontend\sociovia-launchpad-31-prabhu_4_12_2025\src\whatsapp_automation\pages\TestMessageDemo.tsx
+  304:5  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any')
+  381:9  warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-explicit-any')
+
+Γ£û 41 problems (9 errors, 32 warnings)
+  0 errors and 32 warnings potentially fixable with the `--fix` option.
+
