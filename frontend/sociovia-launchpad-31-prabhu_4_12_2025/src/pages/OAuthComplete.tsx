@@ -85,7 +85,7 @@ export default function OAuthComplete(): JSX.Element {
         // Determine a safe targetOrigin if possible — reading opener.location may throw cross-origin
         let targetOrigin: string | "*" = "*";
         try {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+           
           const openerLoc = (window.opener as any).location;
           if (openerLoc && openerLoc.origin) targetOrigin = openerLoc.origin;
         } catch (e) {
@@ -124,7 +124,7 @@ export default function OAuthComplete(): JSX.Element {
     } catch (e) {
       // ignore
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   async function copyPayload() {

@@ -613,7 +613,7 @@ export default function ReviewAndConfirm(): JSX.Element {
         clearTimeout(previewTimeoutRef.current);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [creative?.headline, creative?.primaryText, creative?.imageUrl, adImage?.url, storedVideoUrl, storedThumbnailUrl, selectedFormat]);
 
   const handleSaveDraft = () => {

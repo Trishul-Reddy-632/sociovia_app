@@ -303,7 +303,7 @@ function ComponentEditor({
 
             case 'Dropdown':
             case 'RadioButtonsGroup':
-            case 'CheckboxGroup':
+            case 'CheckboxGroup': {
                 const options = component['data-source'] || [];
                 const addOption = () => {
                     const newOptions = [...options, { id: String(Date.now()), title: `Option ${options.length + 1}` }];
@@ -315,7 +315,7 @@ function ComponentEditor({
                     onChange({ ...component, 'data-source': newOptions });
                 };
                 const removeOption = (idx: number) => {
-                    const newOptions = options.filter((_: any, i: number) => i !== idx);
+                    const newOptions = options.filter((_: unknown, i: number) => i !== idx);
                     onChange({ ...component, 'data-source': newOptions });
                 };
 
@@ -333,7 +333,7 @@ function ComponentEditor({
                         />
                         <div className="space-y-1">
                             <Label className="text-xs text-muted-foreground">Options:</Label>
-                            {options.map((opt: any, idx: number) => (
+                            {options.map((opt: { id: string; title: string }, idx: number) => (
                                 <div key={opt.id || idx} className="flex items-center gap-1">
                                     <Input
                                         value={opt.title || ''}
@@ -369,6 +369,7 @@ function ComponentEditor({
                         </div>
                     </div>
                 );
+            }
 
             case 'DatePicker':
                 return (
@@ -907,7 +908,7 @@ function FlowPreview({ flowJson }: { flowJson: FlowJSON }) {
                                         </div>
                                     </div>
                                 );
-                            case 'Footer':
+                            case 'Footer': {
                                 const destination = getFooterDestination(component);
                                 return (
                                     <div key={idx} className="mt-4">
@@ -924,6 +925,7 @@ function FlowPreview({ flowJson }: { flowJson: FlowJSON }) {
                                         )}
                                     </div>
                                 );
+                            }
                             default:
                                 return <div key={idx} className="text-sm text-gray-400">[{component.type}]</div>;
                         }
@@ -996,8 +998,8 @@ export function FlowBuilder() {
     const [accountId, setAccountId] = useState<number | null>(null);
 
     // Get workspace_id and fetch the active account
-    const workspaceId = localStorage.getItem('sv_whatsapp_workspace_id') || 
-                        sessionStorage.getItem('sv_whatsapp_workspace_id');
+    const workspaceId = localStorage.getItem('sv_whatsapp_workspace_id') ||
+        sessionStorage.getItem('sv_whatsapp_workspace_id');
 
     useEffect(() => {
         const fetchAccount = async () => {

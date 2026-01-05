@@ -187,7 +187,7 @@ export default function AudienceSetup() {
       stopPolling();
       cancelPendingEstimate();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [selectedImages]);
 
   const fetchWorkspacesFromServer = async () => {
@@ -969,7 +969,7 @@ export default function AudienceSetup() {
     return () => {
       cancelPendingEstimate();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [audience, budget, selectedWorkspaceId, industry, creativeDesc, selectedImages, sessionWorkspace, locations]);
 
   const refreshEstimates = () => {

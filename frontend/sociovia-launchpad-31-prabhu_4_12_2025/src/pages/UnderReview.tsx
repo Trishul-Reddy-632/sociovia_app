@@ -58,14 +58,14 @@ export default function UnderReview(): JSX.Element {
       mountedRef.current = false;
       stopPolling();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   useEffect(() => {
     if (status === "approved" && !navigatedRef.current) {
       handleApprovedRedirect();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [status]);
 
   function handleApprovedRedirect() {

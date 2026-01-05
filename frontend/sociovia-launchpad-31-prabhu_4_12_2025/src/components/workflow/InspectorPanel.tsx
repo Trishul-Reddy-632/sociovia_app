@@ -113,7 +113,7 @@ const SafeTextarea: any = isComponent(Textarea) ? Textarea : ({ ...rest }: any) 
 
 /** DEBUG logs to find broken imports (check browser console) */
 if (process.env.NODE_ENV !== "production") {
-  // eslint-disable-next-line no-console
+   
   console.log("InspectorPanel imports:", {
     Card, CardHeader, CardContent, CardTitle, CardDescription,
     Button, Input, Label,
@@ -172,9 +172,9 @@ export function InspectorPanel({
 
   // Dev log the selectedNode.icon shape
   if (process.env.NODE_ENV !== "production") {
-    // eslint-disable-next-line no-console
+     
     console.log("selectedNode.data.icon ->", selectedNode.data.icon);
-    // eslint-disable-next-line no-console
+     
     console.log("resolved Icon ->", Icon);
   }
 

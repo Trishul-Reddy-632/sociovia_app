@@ -235,7 +235,7 @@ export default function WorkspacePage(): JSX.Element {
     }
 
     loadWorkspacesFromApi();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [paramId]);
 
   // Switch workspace

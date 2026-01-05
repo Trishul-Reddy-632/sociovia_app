@@ -177,7 +177,7 @@ export function LocationPicker({
     if (value !== searchQuery) {
       setSearchQuery(value);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [value]);
 
   // Close results when clicking outside

@@ -273,7 +273,7 @@ export default function CreativeEditor(): JSX.Element {
     if (creative?.imageUrl) {
       setLocalImage((prev) => (prev && prev.url === creative.imageUrl ? prev : { id: creative.imageId ?? 'store', url: creative.imageUrl }));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [creative?.primaryText, creative?.headline, creative?.description, creative?.cta, creative?.url, creative?.imageUrl, creative?.imageId]);
 
   useEffect(() => {
@@ -303,7 +303,7 @@ export default function CreativeEditor(): JSX.Element {
     } catch (err) {
       console.error('Unexpected error in image mapping effect', err);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [selectedImages, storeWorkspace]);
 
   useEffect(() => {
@@ -345,7 +345,7 @@ export default function CreativeEditor(): JSX.Element {
       window.removeEventListener('storage', onStorage);
       window.removeEventListener('local_saved_images_updated', onCustom as EventListener);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   const onPrimaryTextChange = (v: string) => {

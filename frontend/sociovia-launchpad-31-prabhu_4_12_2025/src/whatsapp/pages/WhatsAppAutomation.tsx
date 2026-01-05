@@ -791,7 +791,7 @@ function CommandsSection({
       };
 
       if (editingRule) {
-        // @ts-ignore
+        // @ts-expect-error - payload type is intentionally flexible for rule updates
         await updateRule(accountId, editingRule.id, payload);
       } else {
         await createRule(accountId, payload);
@@ -1026,7 +1026,7 @@ function KeywordsSection({
       };
 
       if (editingRule) {
-        // @ts-ignore
+        // @ts-expect-error - payload type is intentionally flexible for rule updates
         await updateRule(accountId, editingRule.id, payload);
       } else {
         await createRule(accountId, payload);

@@ -514,7 +514,7 @@ export async function getCampaigns(workspaceId: string): Promise<CampaignsRespon
  * Accepts either the full CreateCampaignRequest format or
  * any object that represents a campaign payload.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+ 
 export async function createCampaign(request: any): Promise<CreateCampaignResponse> {
   const response = await apiClient.post<CreateCampaignResponse>(
     `${WHATSAPP_API_BASE}/campaigns`,

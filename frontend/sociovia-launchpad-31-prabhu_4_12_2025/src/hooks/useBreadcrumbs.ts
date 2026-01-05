@@ -116,7 +116,7 @@ function generateFallbackBreadcrumbs(pathname: string): UseBreadcrumbsResult {
         currentPath += `/${segment}`;
 
         // Try to get label from route config
-        const routeConfig = Object.values(DASHBOARD_ROUTES).find(r => r.path === currentPath);
+        const routeConfig = (Object.values(DASHBOARD_ROUTES) as RouteConfig[]).find(r => r.path === currentPath);
 
         breadcrumbs.push({
             label: routeConfig?.label ?? formatSegmentLabel(segment),
